@@ -1,0 +1,123 @@
+==================================== C:\Users\anime\Downloads\resume (1).pdf
+--- Page 1 ---
+ANIMESH SRIV ASTA V A
+Ghaziabad, India
++91 9506150136 animeshyt68@gmail.com
+github.com/animesh68 linkedin.com/in/animesh-srivastava-52856a329
+Summary
+Computer Science undergraduate focused on backend engineering, AI/ML systems, and open-source software, with con-
+tributions merged into projects including TensorFlow, bpftrace, and CyberChef. Experienced in building production-
+oriented APIs, retrieval systems, data pipelines, and full-stack applications.
+Education
+KIET Group of Institutions, Ghaziabad 2024–2028
+B.Tech in Computer Science and Engineering (Artificial Intelligence) CGP A: 7.96/10
+Oxford Public School, Gorakhpur 2022–2024
+Class XII (CBSE) 87.8%
+Technical Skills
+ Languages: Python, Java, JavaScript, C++, SQL
+ F rontend:React.js, Vite, React Router, Tailwind CSS
+ Backend: FastAPI, Node.js, Express.js, REST APIs, JWT, RBAC
+ Databases: MongoDB, PostgreSQL, MySQL, Redis
+ AI/ML: TensorFlow, Keras, Scikit-learn, NLP, Embeddings, Hybrid Retrieval, Reranking
+ Cloud & DevOps: A WS, Docker, Git, GitHub Actions, Vercel
+ T ools:Linux, GitHub, MLflow, Pytest, Swagger/OpenAPI
+Open Source Contributions
+ T ensorFlow:Merged a pull request with reviewer approval and passing TAP tests.
+ bpftrace: Fixed incorrect func builtin resolution for probe return/exit branches.
+ CyberChef: Landed 4 merged PRs: error handling, duplicate-operation removal, API docs, and HTML rendering
+fixes.
+ OpenSeadragon: Resolved an Object URL leak in the ImageBitmap worker path; shipped in v6.1.1.
+ CatBoost: Fixed a JNI local reference leak in exception handling ( RethrowExceptionFromJavaToCpp).
+ refined-github: Fixed a pr-from-branch selector bug that broke on forks with a ”Sync fork” button.
+ NewPipe: Fixed an intermittent IllegalStateException crash during ViewPager state restoration; accepted as the
+fix for issue #13740.
+Projects
+Otoichi – F ull-Stack Vinyl Marketplace Live
+React.js · FastAPI · MongoDB · Redis · Stripe
+ Engineered a full-stack marketplace (catalog, auth, cart, coupons, orders, payments, admin) with React and async
+FastAPI.
+ Implemented server-authoritative checkout (Stripe PaymentIntents, HMAC webhooks) with atomic MongoDB ops for
+concurrency-safe inventory.
+ Built Redis cache-aside infra, JWT/RBAC auth, metadata ingestion, and a 50-test Pytest/HTTPX suite.
+CR T – AI Internet Archaeologist
+Python · FastAPI · PostgreSQL/pgvector · NLP · Hybrid Retrieval
+ Built an AI platform reconstructing historical timelines and claim provenance from web sources via iterative retrieval
+and synthesis.
+ Implemented hybrid retrieval (BM25 + dense vectors, RRF, cross-encoder reranking) with entity resolution and multi-
+source claim verification.
+ Designed an iterative research loop that detects evidence gaps, runs follow-up searches, and generates grounded,
+knowledge-graph-backed reports.
+Nocturne.ai – Quantitative Research Platform
+React.js · Node.js · Express.js · MongoDB · Gemini · Amazon Nova
+ Built a quant research platform combining market analytics, social sentiment, and AI insights, powered by a Reddit
+ingestion pipeline.
+ Engineered authenticated REST APIs (JWT/Bcrypt) with MongoDB/Mongoose models and modular services for
+market signals.
+ Integrated Gemini and Amazon Nova for ticker-level summaries; built React dashboards for sentiment and engagement
+metrics.
+Achievements & Certifications
+ Solved 200+ DSA problems on LeetCode/GeeksforGeeks; earned Best Delegate awards at multiple MUN conferences.
+ A WS Certified Cloud Practitioner – Amazon Web Services | Machine Learning – Infosys Springboard
+==================================== C:\Users\anime\Downloads\resume.pdf
+--- Page 1 ---
+ANIMESH SRIV ASTA V A
+Ghaziabad, India
++91 9506150136 animeshyt68@gmail.com
+github.com/animesh68 linkedin.com/in/animesh-srivastava-52856a329
+Summary
+Computer Science undergraduate focused on backend engineering, AI/ML systems, and open-source software, with contri-
+butions merged into projects including TensorFlow, bpftrace, and CyberChef. Experienced in building production-oriented
+APIs, retrieval systems, data pipelines, and full-stack applications.
+Education
+KIET Group of Institutions, Ghaziabad 2024–2028
+B.Tech in Computer Science and Engineering (Artificial Intelligence) CGP A: 7.96/10
+Oxford Public School, Gorakhpur 2022–2024
+Class XII (CBSE) 87.8%
+Technical Skills
+ Languages: Python, Java, JavaScript, C++, SQL
+ F rontend:React.js, Vite, React Router, Tailwind CSS
+ Backend: FastAPI, Node.js, Express.js, REST APIs, JWT, RBAC
+ Databases: MongoDB, PostgreSQL, MySQL, Redis
+ AI/ML: TensorFlow, Keras, Scikit-learn, NLP, Embeddings, Hybrid Retrieval, Reranking
+ Cloud & DevOps:A WS, Docker, Git, GitHub Actions, Vercel
+ T ools:Linux, GitHub, MLflow, Pytest, Swagger/OpenAPI
+Open Source Contributions
+ T ensorFlow:Contributed a merged pull request with reviewer approval and passing TAP tests.
+ bpftrace: Corrected incorrect func builtin resolution for session probe return/exit branches.
+ CyberChef: Landed four merged pull requests spanning error handling, duplicate operation removal, async API
+documentation, and Markdown/HTML rendering behavior.
+ OpenSeadragon: Resolved an Object URL resource leakin the ImageBitmap worker path, included in the project’s
+v6.1.1 release.
+ CatBoost: Eliminated a JNI local reference leak in exception handling ( RethrowExceptionFromJavaToCpp), merged
+into the core C++ JNI layer.
+Projects
+Otoichi – F ull-Stack Vinyl Marketplace GitHub Live
+React.js · FastAPI · MongoDB · Redis · Stripe
+ Engineered a full-stack marketplace with catalog browsing, authentication, cart management, coupons, orders, pay-
+ments, and administrative workflows using React and an asynchronous FastAPI backend.
+ Implemented server-authoritative checkout using Stripe PaymentIntents and HMAC-verified webhooks, with concurrency-
+safe inventory via atomic conditional MongoDB operations to prevent overselling.
+ Built cache-aside infrastructure with Redis and in-memory fallback, JWT authentication, role-based access control,
+external music metadata ingestion, and a 50-test Pytest/HTTPX test suite.
+CR T – AI Internet Archaeologist GitHub
+Python · FastAPI · PostgreSQL/pgvector · NLP · Hybrid Retrieval
+ Built an AI research platform that reconstructs historical timelines and claim provenance from unstructured web sources
+through iterative discovery, retrieval, verification, and synthesis.
+ Implemented hybrid information retrieval combining BM25 lexical search and dense vector search with Reciprocal Rank
+Fusion (RRF) and cross-encoder reranking, paired with entity resolution and multi-source claim verification to classify
+evidence as verified, supported, inferred, uncertain, or contradicted.
+ Designed an iterative temporal research loop that detects evidence gaps, launches targeted follow-up searches, and
+generates grounded reports with knowledge-graph construction and research telemetry.
+Nocturne.ai – Quantitative Research Platform GitHub
+React.js · Node.js · Express.js · MongoDB · Gemini · Amazon Nova
+ Built a full-stack quantitative research platform combining market analytics, social sentiment, AI-generated insights,
+and interactive financial dashboards, powered by a Reddit data ingestion pipeline for financial communities.
+ Engineered authenticated REST APIs with JWT/Bcrypt, MongoDB/Mongoose data models, and modular service layers
+for market signals and AI-generated insights.
+ Integrated Gemini and Amazon Nova to generate ticker-level financial summaries and built React dashboards for
+sentiment trends, mention velocity, engagement scores, and market signals.
+Achievements
+ Solved 200+ DSA problems across LeetCode and GeeksforGeeks; received Best Delegate awards across multiple
+Model United Nations conferences.
+Certifications
+ A WS Certified Cloud Practitioner – Amazon Web Services | Machine Learning – Infosys Springboard
