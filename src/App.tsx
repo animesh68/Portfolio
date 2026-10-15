@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar } from './components/Navbar'
 import { HeroScene } from './components/HeroScene'
+import { AboutSection } from './components/AboutSection'
 import { ProjectSection } from './components/ProjectSection'
+import { AdditionalProjectsSection } from './components/AdditionalProjectsSection'
 import { ProjectCaseStudyModal } from './components/ProjectCaseStudyModal'
 import { OpenSourceSection } from './components/OpenSourceSection'
 import { MixtapeCorner } from './components/MixtapeCorner'
-import { AboutSection } from './components/AboutSection'
 import { ContactFooter } from './components/ContactFooter'
-import { AmbientControls, SectionDivider } from './components/AmbientBackground'
+import { AmbientControls } from './components/AmbientBackground'
+import { HitoriSticker } from './components/HitoriSticker'
 import type { Project } from './data/portfolio'
 
 export const App: React.FC = () => {
@@ -15,9 +17,11 @@ export const App: React.FC = () => {
   const [selectedModalProject, setSelectedModalProject] = useState<Project | null>(null)
   const [scanlines, setScanlines] = useState(false)
 
+  const isModalOpen = Boolean(selectedModalProject)
+
   // Track active section on scroll
   useEffect(() => {
-    const sectionIds = ['home', 'work', 'opensource', 'mixtape', 'about', 'contact']
+    const sectionIds = ['home', 'about', 'work', 'experiments', 'opensource', 'mixtape', 'photos', 'contact']
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,7 +31,7 @@ export const App: React.FC = () => {
           }
         })
       },
-      { threshold: 0.25, rootMargin: '-60px 0px -40% 0px' }
+      { threshold: 0.2, rootMargin: '-70px 0px -40% 0px' }
     )
 
     sectionIds.forEach((id) => {
@@ -39,55 +43,50 @@ export const App: React.FC = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#171725] text-[#FFF6EE] relative selection:bg-[#FF8A55]/30 selection:text-[#FFF6EE]">
+    <div className="min-h-screen text-[#29263D] relative selection:bg-[#FF8A55]/25 selection:text-[#29263D]">
+      
+      {/* 1. Continuous Persistent Parking-Lot Sunset Atmosphere Layer across the Entire Page */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <img
+          src="/assets/parking-lot-sunset.jpg"
+          alt=""
+          className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.03]"
+          loading="eager"
+        />
+        {/* Soft atmospheric gradient wash: protects contrast while letting orange clouds and sunset glow illuminate the whole page */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#29263D]/25 via-[#FFF6EE]/30 to-[#FFF6EE]/45" />
+        <div className="absolute inset-0 bg-[#FFF6EE]/15 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0 film-grain pointer-events-none opacity-30" />
+      </div>
+
       {/* Optional CRT Scanlines Overlay */}
       {scanlines && <div className="fixed inset-0 z-50 scanlines pointer-events-none" />}
 
       {/* Navigation Header */}
       <Navbar activeSection={activeSection} />
 
-      {/* Main Page Flow */}
-      <main>
-        {/* Section 1: Hero Scene */}
+      {/* Main Page Flow following strict natural order:
+          Hero -> About -> Featured Projects -> Additional Projects -> Merged PRs -> Compact Mixtape -> Contact & Footer (with Corner Photo Slideshow) */}
+      <main className="relative z-10">
+        {/* 1. Hero Scene: The Parking-lot Sunset Entrypoint */}
         <HeroScene />
 
-        {/* Visual Moment A: Golden clouds behind chain link fence (Reference C) */}
-        <SectionDivider
-          image="/assets/golden-clouds-fence.jpg"
-          alt="Golden clouds glowing behind a chain-link fence at dusk"
-          caption="ordinary places, extraordinary skies."
-          accentColor="#FF8A55"
-        />
-
-        {/* Section 2: Selected Work */}
-        <ProjectSection onSelectProject={(project) => setSelectedModalProject(project)} />
-
-        {/* Visual Moment B: Japanese utility poles & twilight sky (Reference D) */}
-        <SectionDivider
-          image="/assets/utility-poles-sunset.jpg"
-          alt="Japanese utility poles, overhead wires and pink-blue twilight sky"
-          caption="built somewhere between sunset and midnight."
-          accentColor="#F6A5C4"
-        />
-
-        {/* Section 3: Open-Source Contributions Ledger */}
-        <OpenSourceSection />
-
-        {/* Visual Moment C: Anime countryside at sunset (Reference E) */}
-        <SectionDivider
-          image="/assets/anime-countryside-landscape.jpg"
-          alt="Train crossing water under sunset clouds"
-          caption="a little piece of the internet we never quite forgot."
-          accentColor="#A8C9F0"
-        />
-
-        {/* Section 4: Signature Feature — mixtape.exe */}
-        <MixtapeCorner />
-
-        {/* Section 5: About Me & Capabilities */}
+        {/* 2. About Me */}
         <AboutSection />
 
-        {/* Section 6: Contact & Footer */}
+        {/* 3. Featured Projects: Lakers in 5, CRT, Otoichi */}
+        <ProjectSection onSelectProject={(project) => setSelectedModalProject(project)} />
+
+        {/* 4. Additional Projects: Filtered ANN Research & Nocturne.ai */}
+        <AdditionalProjectsSection onSelectProject={(project) => setSelectedModalProject(project)} />
+
+        {/* 5. Open-Source Contributions Ledger / Merged PRs */}
+        <OpenSourceSection />
+
+        {/* 6. Compact Mixtape: 6 Cassettes in ONE row + Player on the right */}
+        <MixtapeCorner />
+
+        {/* 7. Contact & Footer: Minimal footer with Magnetic Photo Slideshow in corner */}
         <ContactFooter />
       </main>
 
@@ -97,10 +96,14 @@ export const App: React.FC = () => {
         onClose={() => setSelectedModalProject(null)}
       />
 
-      {/* Floating Ambient Controls */}
+      {/* Hitori Gotoh Sticker (Fixed at Bottom-Left of Viewport) */}
+      <HitoriSticker isModalOpen={isModalOpen} />
+
+      {/* Floating Retro CRT Controls (Fixed at Bottom-Right of Viewport) */}
       <AmbientControls
         scanlines={scanlines}
         onToggleScanlines={() => setScanlines(!scanlines)}
+        isModalOpen={isModalOpen}
       />
     </div>
   )

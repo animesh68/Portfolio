@@ -56,6 +56,17 @@ export interface SkillCategory {
   skills: string[]
 }
 
+export interface DreamPhoto {
+  id: string
+  number: string
+  title: string
+  location: string
+  timestamp: string
+  url: string
+  alt: string
+  mood: string
+}
+
 export const PORTFOLIO_DATA = {
   personal: {
     name: 'Animesh Srivastava',
@@ -100,12 +111,12 @@ export const PORTFOLIO_DATA = {
     {
       id: 'lakers-in-5',
       title: 'Lakers in 5',
-      category: 'Machine Learning / Sports Analytics / MLOps',
-      tagline: 'Production-grade NBA forecasting pipeline with temporal leakage prevention and drift monitoring.',
-      description: 'An end-to-end NBA forecasting pipeline exploring how historical performance, engineered features, and careful evaluation can inform game-outcome predictions.',
+      category: 'Machine Learning',
+      tagline: 'Production-grade NBA forecasting pipeline exploring historical performance and engineered features.',
+      description: 'An end-to-end NBA forecasting pipeline exploring historical performance, engineered features, and careful model evaluation.',
       fullSummary: 'Lakers in 5 is a production-oriented NBA prediction system and MLOps platform engineered to forecast upcoming Los Angeles Lakers games. Built with strict temporal leakage prevention, train/serve feature parity, automated outcome logging, Population Stability Index (PSI) data drift monitoring, and retraining governance.',
       repoUrl: 'https://github.com/animesh68/Lakers-in-5',
-      technologies: ['Python', 'DuckDB', 'Parquet', 'Scikit-learn', 'LightGBM', 'FastAPI', 'Streamlit', 'MLflow', 'Docker'],
+      technologies: ['Python', 'DuckDB', 'PostgreSQL', 'MLflow', 'FastAPI'],
       metrics: [
         { label: 'Historical Scope', value: '1946–2026' },
         { label: 'Feature Matrix', value: '73,279 × 61' },
@@ -125,54 +136,20 @@ export const PORTFOLIO_DATA = {
         'Fully containerized multi-container Docker Compose production stack'
       ],
       screenshots: [
-        { url: '/assets/projects/lakers-hero.png', caption: 'Lakers in 5 Pre-Game Inference Engine and Matchup Dashboard' },
+        { url: '/assets/projects/lakersIn5.png', caption: 'Lakers in 5 Pre-Game Inference Engine and Matchup Dashboard' },
         { url: '/assets/projects/lakers-logo.png', caption: 'Lakers in 5 Architectural Identity & Brand' }
-      ],
-      featured: true
-    },
-    {
-      id: 'fanns-research',
-      title: 'Filtered ANN Research',
-      category: 'Information Retrieval / Research / Benchmarking',
-      tagline: 'Academic-grade benchmarking framework evaluating retrieval trade-offs in filtered nearest-neighbor search.',
-      description: 'Investigating the trade-offs between retrieval quality, filtering constraints, and search performance in approximate nearest-neighbor systems.',
-      fullSummary: 'An academic-grade, reproducible research and benchmarking framework for Filtered Approximate Nearest Neighbor Search (FANNS) on high-dimensional vector embeddings with metadata predicates. Evaluates 11 search strategies across Exact Match, continuous Range, and Set-containment filtering regimes.',
-      repoUrl: 'https://github.com/animesh68/filtered_ann_arxiv_for_fanns_small',
-      technologies: ['Python', 'HNSW', 'Inverted Index', 'Vector Embeddings', 'NumPy', 'Slurm HPC', 'Scientific Plotting'],
-      metrics: [
-        { label: 'Controlled Queries', value: '16,500' },
-        { label: 'Evaluated Strategies', value: '11 Implementations' },
-        { label: 'PreFilter EM Recall@10', value: '1.0000 (6.92ms)' },
-        { label: 'InGraph EM Recall@10', value: '0.9998 (4.95ms)' }
-      ],
-      keyFeatures: [
-        'Controlled evaluation across 3 predicate modalities: Exact Match (EM), Range (R continuous timestamps), and Exact Match In Set (EMIS).',
-        'Systematic comparison of 11 strategies: Exact Search ground truth, Inverted-Index Pre-Filtering, Naive HNSW Post-Filtering, HNSW Overfetching (2x–20x), In-Graph Filtered Traversal, and approximations of ACORN, SIEVE, and UNIFY.',
-        'Nanosecond-precision timing harness measuring percentile latencies (p50, p95, p99), QPS throughput, and memory scaling.',
-        'Demonstrated failure modes of naive post-filtering: recall collapses to 0.20–0.39 under restrictive selectivity regimes, whereas InGraph traversal maintains >0.994 recall at sub-7ms latency.',
-        'HPC cluster readiness with Slurm job submission scripts for scaling to 100K–1M vector corpora.'
-      ],
-      highlights: [
-        'Empirical trade-off curves for Recall@10 vs. Selectivity & Latency',
-        'Reproducible pipeline with automated figure generation (300 DPI)',
-        'Extensive 28-section academic progress report and experiment logs'
-      ],
-      screenshots: [
-        { url: '/assets/projects/fanns-tradeoff.png', caption: 'Empirical Trade-off: Recall@10 vs. Latency Across 11 Filtering Strategies' },
-        { url: '/assets/projects/fanns-selectivity.png', caption: 'Recall Degradation Curves Across Selectivity Strata' },
-        { url: '/assets/projects/fanns-qps.png', caption: 'Throughput (QPS) Comparison Across Exact Match, Range, and EMIS Filters' }
       ],
       featured: true
     },
     {
       id: 'crt-archaeologist',
       title: 'CRT — AI Internet Archaeologist',
-      category: 'AI Research / Hybrid Retrieval / Evidence Provenance',
-      tagline: 'Autonomous historical timeline reconstruction and multi-source evidence grounding platform.',
-      description: 'An AI research system designed to connect historical claims with supporting evidence, identify missing context, and build grounded reports from web sources.',
+      category: 'AI Research',
+      tagline: 'Connects historical claims with supporting evidence, uncovers missing context, and builds grounded timelines.',
+      description: 'An AI research system that connects historical claims with supporting evidence, uncovers missing context, and builds grounded timelines from web sources.',
       fullSummary: 'CRT is an AI Internet Archaeologist engineered to excavate, normalize, and temporally reconstruct historical lineages, technical evolutions, and verifiable claim provenance from raw, unstructured web documents. Combines hybrid lexical/dense retrieval, cross-encoder reranking, and epistemic verification.',
       repoUrl: 'https://github.com/animesh68/CRT',
-      technologies: ['Python', 'FastAPI', 'PostgreSQL / pgvector', 'React 19', 'TypeScript', 'BM25Okapi', 'Cross-Encoder', 'Knowledge Graph'],
+      technologies: ['Python', 'FastAPI', 'PostgreSQL/pgvector', 'NLP', 'hybrid retrieval'],
       metrics: [
         { label: 'Regression Tests', value: '41 Passed (100%)' },
         { label: 'RRF Hyperparameter', value: 'k = 60' },
@@ -180,7 +157,7 @@ export const PORTFOLIO_DATA = {
         { label: 'Claim Classifications', value: '6 Rigorous States' }
       ],
       keyFeatures: [
-        'Subject Resolution & Polysemy Disambiguation resolving ambiguous entities (e.g. "mercury", "python", "apple") into canonical typed candidates.',
+        'Subject Resolution & Polysemy Disambiguation resolving ambiguous entities into canonical typed candidates.',
         'Multi-stage Hybrid Retrieval: True Reciprocal Rank Fusion (RRF, k=60) combining BM25Okapi sparse lexical search and dense transformer embeddings.',
         'Neural Cross-Encoder reranking using cross-encoder/ms-marco-TinyBERT-L-2-v2 with heuristic proximity fallback for fast, accurate text-pair scoring.',
         'Source Authority & Syndication Analyzer measuring 6-gram shingle overlap to penalize redundant wire network duplication.',
@@ -198,21 +175,18 @@ export const PORTFOLIO_DATA = {
         { url: '/assets/projects/crt-config.png', caption: 'CRT Display Configuration & Shading Matrix' }
       ],
       featured: true
-    }
-  ] as Project[],
-
-  additionalProjects: [
+    },
     {
       id: 'otoichi',
       title: 'Otoichi (音市)',
-      category: 'Full-Stack Vinyl Marketplace',
-      tagline: 'Full-stack marketplace with streaming previews, cache-aside Redis, and Stripe checkout.',
-      description: 'A full-stack ecommerce vinyl record marketplace bridging crate-digging physical aesthetics with production-grade backend architecture.',
+      category: 'Full-Stack Development',
+      tagline: 'Full-stack vinyl marketplace with streaming previews, cache-aside Redis, and Stripe checkout.',
+      description: 'A full-stack vinyl marketplace built around music discovery, secure checkout, and a complete shopping experience.',
       fullSummary: 'Otoichi (音市) is a full-stack ecommerce platform engineered for audiophiles and vinyl collectors. Features 30-second persistent audio previews, Goldmine grading, atomic MongoDB inventory operations to prevent overselling, and server-authoritative Stripe PaymentIntents.',
       repoUrl: 'https://github.com/animesh68/Otoichi',
       liveUrl: 'https://otoichi.vercel.app/',
       docsUrl: 'https://otoichi.onrender.com/docs',
-      technologies: ['React 19', 'Vite', 'FastAPI', 'MongoDB Atlas', 'Redis', 'Stripe SDK', 'JWT/RBAC', 'Pytest'],
+      technologies: ['React', 'FastAPI', 'MongoDB', 'Redis', 'Stripe'],
       metrics: [
         { label: 'Pytest Suite', value: '50 Tests' },
         { label: 'Payment Pattern', value: 'Stripe Intents + HMAC' },
@@ -231,17 +205,52 @@ export const PORTFOLIO_DATA = {
         { url: '/assets/projects/otoichi-album.png', caption: 'Master Pressing Details & Tracklist' },
         { url: '/assets/projects/otoichi-preview.png', caption: 'Persistent Streamable Audio Preview Bar' }
       ],
+      featured: true
+    }
+  ] as Project[],
+
+  additionalProjects: [
+    {
+      id: 'fanns-research',
+      title: 'Filtered ANN Research',
+      category: 'Information Retrieval / Research',
+      tagline: 'Academic-grade benchmarking framework evaluating retrieval trade-offs in filtered nearest-neighbor search.',
+      description: 'Investigating the trade-offs between retrieval quality, filtering constraints, and search performance in approximate nearest-neighbor search.',
+      fullSummary: 'An academic-grade, reproducible research and benchmarking framework for Filtered Approximate Nearest Neighbor Search (FANNS) on high-dimensional vector embeddings with metadata predicates. Evaluates 11 search strategies across Exact Match, continuous Range, and Set-containment filtering regimes.',
+      repoUrl: 'https://github.com/animesh68/filtered_ann_arxiv_for_fanns_small',
+      technologies: ['Python', 'HNSW', 'Slurm HPC', 'Slurm', 'NumPy', 'Vector Embeddings'],
+      metrics: [
+        { label: 'Controlled Queries', value: '16,500' },
+        { label: 'Evaluated Strategies', value: '11 Implementations' },
+        { label: 'PreFilter EM Recall@10', value: '1.0000 (6.92ms)' },
+        { label: 'InGraph EM Recall@10', value: '0.9998 (4.95ms)' }
+      ],
+      keyFeatures: [
+        'Controlled evaluation across 3 predicate modalities: Exact Match (EM), Range (R continuous timestamps), and Exact Match In Set (EMIS).',
+        'Systematic comparison of 11 strategies: Exact Search ground truth, Inverted-Index Pre-Filtering, Naive HNSW Post-Filtering, HNSW Overfetching (2x–20x), In-Graph Filtered Traversal, and approximations of ACORN, SIEVE, and UNIFY.',
+        'Nanosecond-precision timing harness measuring percentile latencies (p50, p95, p99), QPS throughput, and memory scaling.',
+        'Demonstrated failure modes of naive post-filtering: recall collapses to 0.20–0.39 under restrictive selectivity regimes, whereas InGraph traversal maintains >0.994 recall at sub-7ms latency.'
+      ],
+      highlights: [
+        'Empirical trade-off curves for Recall@10 vs. Selectivity & Latency',
+        'Reproducible pipeline with automated figure generation (300 DPI)'
+      ],
+      screenshots: [
+        { url: '/assets/projects/fanns-tradeoff.png', caption: 'Empirical Trade-off: Recall@10 vs. Latency Across 11 Filtering Strategies' },
+        { url: '/assets/projects/fanns-selectivity.png', caption: 'Recall Degradation Curves Across Selectivity Strata' },
+        { url: '/assets/projects/fanns-qps.png', caption: 'Throughput (QPS) Comparison Across Exact Match, Range, and EMIS Filters' }
+      ],
       featured: false
     },
     {
       id: 'nocturne-ai',
-      title: 'Nocturne.ai (Nova)',
+      title: 'Nocturne.ai',
       category: 'Quantitative Research Platform',
-      tagline: 'Market analytics, Reddit community sentiment ingestion, and multi-model AI insights.',
-      description: 'Full-stack quantitative research platform combining market analytics, social sentiment, and AI-generated insights.',
+      tagline: 'Market analytics, social sentiment ingestion, and AI-generated insights.',
+      description: 'A quantitative research platform bringing together market analytics, social sentiment, and AI-generated insights.',
       fullSummary: 'Nocturne.ai (Nova) is a quantitative research platform combining financial market data with social sentiment extracted from Reddit financial communities. Integrates Gemini and Amazon Nova for ticker-level financial summaries and interactive dashboards.',
       repoUrl: 'https://github.com/animesh68/Nova',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Gemini API', 'Amazon Nova', 'JWT/Bcrypt'],
+      technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Gemini API', 'Amazon Nova'],
       metrics: [
         { label: 'Ingestion Pipeline', value: 'Reddit Subreddits' },
         { label: 'AI Summaries', value: 'Gemini + Amazon Nova' },
@@ -254,7 +263,7 @@ export const PORTFOLIO_DATA = {
       ],
       highlights: ['Ticker-level sentiment tracking', 'Interactive financial intelligence dashboards'],
       screenshots: [
-        { url: '/assets/pastel-dreamcore-horizon.jpg', caption: 'Nocturne.ai System Horizon & Financial Signal Overview' }
+        { url: '/assets/projects/nocturne-ai.jpg', caption: 'Nocturne.ai Quantitative Research & Market Analytics Overview' }
       ],
       featured: false
     }
@@ -340,7 +349,7 @@ export const PORTFOLIO_DATA = {
 
   mixtape: {
     sectionName: 'mixtape.exe',
-    subtitle: 'Five songs. Five little worlds. Pick a tape and stay a while.',
+    subtitle: 'Six songs. Six little worlds. Pick a tape and stay a while.',
     tapes: [
       {
         id: 'tape-1',
@@ -409,10 +418,10 @@ export const PORTFOLIO_DATA = {
         artist: 'Dexys Midnight Runners',
         mood: 'the song playing while everyone gets ready',
         quote: 'Poor old Johnny Ray sounded sad upon the radio...',
-        durationStr: '4:12',
-        trackId: '3R8B46CWrLWm1yo71BqcUM',
-        spotifyUrl: 'https://open.spotify.com/track/3R8B46CWrLWm1yo71BqcUM',
-        embedUrl: 'https://open.spotify.com/embed/track/3R8B46CWrLWm1yo71BqcUM?utm_source=generator&theme=0',
+        durationStr: '4:47',
+        trackId: '3MrWxJaD2AT0W9DjWF64Vm',
+        spotifyUrl: 'https://open.spotify.com/track/3MrWxJaD2AT0W9DjWF64Vm',
+        embedUrl: 'https://open.spotify.com/embed/track/3MrWxJaD2AT0W9DjWF64Vm?utm_source=generator&theme=0',
         palette: {
           bg: '#2b211d',
           accent: '#FF8A55',
@@ -441,8 +450,85 @@ export const PORTFOLIO_DATA = {
           text: '#A8C9F0',
           glow: 'rgba(246, 165, 196, 0.5)'
         }
+      },
+      {
+        id: 'tape-6',
+        number: '06',
+        title: 'Tum Se Hi',
+        artist: 'Mohit Chauhan',
+        mood: 'warm evening breeze & raindrops',
+        quote: 'Aadha sa vaada kabhi, aadhe se zyaada kabhi...',
+        durationStr: '5:21',
+        trackId: '7eQl3Yqv35ioqUfveKHitE',
+        spotifyUrl: 'https://open.spotify.com/track/7eQl3Yqv35ioqUfveKHitE',
+        embedUrl: 'https://open.spotify.com/embed/track/7eQl3Yqv35ioqUfveKHitE?utm_source=generator&theme=0',
+        palette: {
+          bg: '#1b2230',
+          accent: '#A8C9F0',
+          spool: '#2d3b52',
+          label: '#222d40',
+          text: '#B8A8E8',
+          glow: 'rgba(168, 201, 240, 0.45)'
+        }
       }
     ] as CassetteTape[]
+  },
+
+  camera: {
+    heading: 'Little moments, kept forever.',
+    subheading: 'Somewhere between a photograph and a feeling.',
+    photos: [
+      {
+        id: 'photo-1',
+        number: '01',
+        title: 'Late Night Convenience',
+        location: 'Parking Lot Dusk',
+        timestamp: '08:14 PM',
+        url: '/assets/shopping-cart-twilight.jpg',
+        alt: 'Liminal convenience store and empty shopping cart under purple-pink sunset clouds',
+        mood: 'twilight glow & distant traffic'
+      },
+      {
+        id: 'photo-2',
+        number: '02',
+        title: 'Towering Gold',
+        location: 'Perimeter Chain-Link',
+        timestamp: '06:42 PM',
+        url: '/assets/golden-clouds-fence.jpg',
+        alt: 'Golden clouds glowing behind a chain-link fence at dusk',
+        mood: 'ordinary places, extraordinary skies'
+      },
+      {
+        id: 'photo-3',
+        number: '03',
+        title: 'Overhead Wires & Twilight',
+        location: 'Neighborhood Crossing',
+        timestamp: '07:05 PM',
+        url: '/assets/utility-poles-sunset.jpg',
+        alt: 'Utility poles and overhead wires silhouetted against a pink-blue twilight sky',
+        mood: 'built somewhere between sunset and midnight'
+      },
+      {
+        id: 'photo-4',
+        number: '04',
+        title: 'The Train Across the Water',
+        location: 'Coastal Horizon',
+        timestamp: '06:18 PM',
+        url: '/assets/anime-countryside-landscape.jpg',
+        alt: 'Train tracks over coastal water under soft pastel sunset clouds',
+        mood: 'a little piece of the internet we never quite forgot'
+      },
+      {
+        id: 'photo-5',
+        number: '05',
+        title: 'Soft Horizon',
+        location: 'Infinite Dusk',
+        timestamp: '07:30 PM',
+        url: '/assets/pastel-dreamcore-horizon.jpg',
+        alt: 'Dreamcore pastel pink and lavender clouds over quiet horizon',
+        mood: 'pastel skies & quiet memories'
+      }
+    ] as DreamPhoto[]
   },
 
   skills: [

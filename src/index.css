@@ -7,6 +7,8 @@
   --color-lavender-dusk: #B8A8E8;
   --color-warm-cream: #FFF6EE;
   --color-dusty-rose: #D982A5;
+  --color-pale-peach: #FFD4B8;
+  --color-soft-periwinkle: #D9D7FA;
   --color-twilight-navy: #29263D;
   --color-deep-night: #171725;
 
@@ -17,25 +19,25 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-deep-night);
-  color: var(--color-warm-cream);
+  background-color: #FFF6EE;
+  color: var(--color-twilight-navy);
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* Custom Soft Pastel Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #171725;
+  background: #FFF0E5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #36334e;
+  background: #E8D3C4;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -45,55 +47,71 @@ body {
 /* Retro CRT & Dither Overlay */
 .scanlines {
   background: linear-gradient(
-    rgba(18, 16, 28, 0) 50%, 
-    rgba(0, 0, 0, 0.25) 50%
+    rgba(255, 246, 238, 0) 50%, 
+    rgba(41, 38, 61, 0.08) 50%
   ), linear-gradient(
     90deg,
-    rgba(255, 0, 0, 0.03),
-    rgba(0, 255, 0, 0.01),
-    rgba(0, 0, 255, 0.03)
+    rgba(255, 138, 85, 0.02),
+    rgba(168, 201, 240, 0.02),
+    rgba(246, 165, 196, 0.02)
   );
   background-size: 100% 3px, 6px 100%;
   pointer-events: none;
 }
 
-/* Film Grain Texture */
+/* Delicate Film Grain Texture */
 .film-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
-/* Glassmorphism Window */
-.y2k-window {
-  background: rgba(41, 38, 61, 0.72);
+/* Pastel Cards & Windows */
+.pastel-card {
+  background: rgba(255, 253, 251, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(246, 165, 196, 0.18);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  border: 1px solid rgba(246, 165, 196, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(255, 138, 85, 0.08), 0 1px 3px rgba(41, 38, 61, 0.04);
 }
 
-.y2k-window-light {
-  background: rgba(255, 246, 238, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.pastel-card-cream {
+  background: rgba(255, 248, 240, 0.95);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 138, 85, 0.25);
-  box-shadow: 0 18px 40px -10px rgba(41, 38, 61, 0.35);
+  box-shadow: 0 12px 28px -8px rgba(41, 38, 61, 0.07);
 }
 
-/* Glowing Neon Elements */
-.glow-orange {
-  box-shadow: 0 0 20px rgba(255, 138, 85, 0.35);
+.pastel-card-blue {
+  background: rgba(245, 249, 254, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 201, 240, 0.45);
+  box-shadow: 0 12px 28px -8px rgba(168, 201, 240, 0.2);
 }
 
-.glow-pink {
-  box-shadow: 0 0 20px rgba(246, 165, 196, 0.35);
+.pastel-card-pink {
+  background: rgba(254, 246, 249, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(246, 165, 196, 0.45);
+  box-shadow: 0 12px 28px -8px rgba(246, 165, 196, 0.2);
 }
 
-.text-glow-orange {
-  text-shadow: 0 0 12px rgba(255, 138, 85, 0.5);
+.pastel-card-lavender {
+  background: rgba(248, 246, 253, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 168, 232, 0.45);
+  box-shadow: 0 12px 28px -8px rgba(184, 168, 232, 0.2);
 }
 
-.text-glow-pink {
-  text-shadow: 0 0 12px rgba(246, 165, 196, 0.5);
+/* Subtle Pastel Glows */
+.glow-peach {
+  box-shadow: 0 0 24px rgba(255, 212, 184, 0.6);
+}
+
+.glow-orange-soft {
+  box-shadow: 0 4px 20px rgba(255, 138, 85, 0.25);
+}
+
+.glow-pink-soft {
+  box-shadow: 0 4px 20px rgba(246, 165, 196, 0.25);
 }
 
 /* Cassette Spool Spin */
@@ -103,7 +121,17 @@ body {
 }
 
 .animate-spin-slow {
-  animation: spin 3s linear infinite;
+  animation: spin 3.5s linear infinite;
+}
+
+/* Floating animation for subtle stickers */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float-subtle 4s ease-in-out infinite;
 }
 
 /* Respect prefers-reduced-motion */
